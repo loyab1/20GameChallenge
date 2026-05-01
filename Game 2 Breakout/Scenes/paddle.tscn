@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dxqxg2u88e0j7"]
+
+[ext_resource type="Script" uid="uid://bfg03epvkfl3r" path="res://Scripts/paddlemovement.gd" id="1_krcey"]
+[ext_resource type="Texture2D" uid="uid://bjn6loxm0rgg2" path="res://Assets/Padel.png" id="1_nxw3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krcey"]
+size = Vector2(30, 5)
+
+[node name="Paddle" type="CharacterBody2D" unique_id=348582553]
+script = ExtResource("1_krcey")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1893005587]
+texture_filter = 1
+rotation = 1.5707964
+texture = ExtResource("1_nxw3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=295195517]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_krcey")
