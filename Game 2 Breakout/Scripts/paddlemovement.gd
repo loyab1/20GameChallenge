@@ -10,5 +10,5 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("move_left","move_right")
 	
 	if direction: 
-		velocity.x = direction * 200
+		velocity.x = direction * 400
 		move_and_slide()
