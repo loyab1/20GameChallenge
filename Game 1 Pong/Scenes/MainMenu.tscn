@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bpspjbbx70b3y"]
+
+[ext_resource type="Script" uid="uid://0m1bbm1cvswg" path="res://Scenes/main_menu.gd" id="1_tt5f1"]
+
+[node name="MainMenu" type="Control" unique_id=988646530]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=362679469]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.5
+offset_top = -116.5
+offset_right = 130.5
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SinglePlayerButton" type="Button" parent="VBoxContainer" unique_id=740881204]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "One Player"
+
+[node name="TwoPlayerButton" type="Button" parent="VBoxContainer" unique_id=573670908]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Two Player
+"
+
+[node name="QuitButtonButton" type="Button" parent="VBoxContainer" unique_id=710807149]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=136644846]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_right = 77.5
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Pong"
+
+[connection signal="pressed" from="VBoxContainer/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TwoPlayerButton" to="." method="_on_two_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButtonButton" to="." method="_on_quit_button_button_pressed"]

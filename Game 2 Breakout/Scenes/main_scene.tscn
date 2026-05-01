@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dpdgmo22ciaev"]
+
+[node name="MainScene" type="Node2D" unique_id=1950882881]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1962995694]
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1523600682]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)

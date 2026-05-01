@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://sctkdrdx6ux4"]
+
+[ext_resource type="Script" uid="uid://1tqclqk2khh0" path="res://Scenes/main_scene.gd" id="1_52fb6"]
+[ext_resource type="PackedScene" uid="uid://cvrmnq7m16my7" path="res://Scenes/Paddel.tscn" id="2_6l7je"]
+[ext_resource type="PackedScene" uid="uid://dtcuh14nmpmcb" path="res://Scenes/Ball.tscn" id="3_jv6wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ia5b"]
+size = Vector2(1920, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv6wh"]
+size = Vector2(20, 1080)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jv6wh"]
+font_size = 64
+
+[node name="MainScene" type="Node2D" unique_id=1787049871]
+script = ExtResource("1_52fb6")
+
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=1473671645]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1122882843]
+position = Vector2(960, -10)
+shape = SubResource("RectangleShape2D_2ia5b")
+
+[node name="BottomWall" type="StaticBody2D" parent="." unique_id=1162057726]
+position = Vector2(0, 1100)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=1243871143]
+position = Vector2(960, -10)
+shape = SubResource("RectangleShape2D_2ia5b")
+
+[node name="Paddle" parent="." unique_id=1354114955 instance=ExtResource("2_6l7je")]
+position = Vector2(192, 540)
+collision_layer = 8
+paddle_speed = 1000
+
+[node name="LeftWall" type="Area2D" parent="." unique_id=1729964701]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=973186682]
+position = Vector2(-10, 540)
+shape = SubResource("RectangleShape2D_jv6wh")
+
+[node name="RightWall" type="Area2D" parent="." unique_id=1779740387]
+position = Vector2(1940, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1501669437]
+position = Vector2(-10, 540)
+shape = SubResource("RectangleShape2D_jv6wh")
+
+[node name="Ball" parent="." unique_id=1983395969 instance=ExtResource("3_jv6wh")]
+position = Vector2(960, 540)
+collision_mask = 14
+
+[node name="LeftScore" type="Label" parent="." unique_id=1626029838]
+offset_left = 890.0
+offset_top = 6.0
+offset_right = 927.0
+offset_bottom = 94.0
+label_settings = SubResource("LabelSettings_jv6wh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightScore" type="Label" parent="." unique_id=493327790]
+offset_left = 992.0
+offset_top = 6.0
+offset_right = 1029.0
+offset_bottom = 94.0
+label_settings = SubResource("LabelSettings_jv6wh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="LeftWall" to="." method="_on_left_wall_body_entered"]
+[connection signal="body_entered" from="RightWall" to="." method="_on_right_wall_body_entered"]

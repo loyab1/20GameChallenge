@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dr8e5spu60vr7"]
+
+[ext_resource type="Script" uid="uid://3ragphdpm5re" path="res://Opppaddle.gd" id="1_f6c63"]
+[ext_resource type="Texture2D" uid="uid://cffwrtgam6vgs" path="res://Padel.png" id="2_ub3jw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx27g"]
+size = Vector2(20, 120)
+
+[node name="Paddle" type="CharacterBody2D" unique_id=1354114955]
+script = ExtResource("1_f6c63")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=361540083]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_ub3jw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71479558]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_jx27g")
