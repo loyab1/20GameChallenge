@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjjoawp7p3kkx"]
+
+[ext_resource type="Texture2D" uid="uid://jcfhlpc0pidx" path="res://Assets/ballBlue_10.png" id="1_7nh6h"]
+[ext_resource type="Script" uid="uid://b847lqwo3bpsf" path="res://Scripts/ballmovement.gd" id="1_eb1ap"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eb1ap"]
+radius = 19.0
+
+[node name="Node2D" type="CharacterBody2D" unique_id=2079311117]
+script = ExtResource("1_eb1ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025881673]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_7nh6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538328308]
+shape = SubResource("CircleShape2D_eb1ap")
