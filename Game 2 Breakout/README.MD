@@ -6,7 +6,7 @@ Create a game space with walls and a ceiling. ✓
 
 Add a paddle that can be moved left and right via player inputs. ✓
 
-Add a ball that will bounce off of the paddle, walls, and ceiling.
+Add a ball that will bounce off of the paddle, walls, and ceiling. ✓
 
 Add square game objects (bricks) into the top of the game space.
 
