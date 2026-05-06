@@ -6,6 +6,7 @@ var velocity_vector : Vector2  = Vector2(0,-1)
 
 
 func _ready() -> void:
+	set_as_top_level(true)
 	global_position = get_viewport_rect().size / 2
 
 func _physics_process(delta: float) -> void:

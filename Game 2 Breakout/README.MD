@@ -32,3 +32,30 @@ Add different colors to the bricks in the rows. (The original game was black-and
 
 The paddle should get narrower once the ball reaches the ceiling.
 
+
+
+
+
+
+
+
+
+
+# Design Implementation 
+
+
+
+### Designing the brick
+
+Properties: 
+- Have a set Health before breaking
+
+Behaviors: 
+- Bounce the Ball after breaking ✓
+- Fill the game space with 16 rows of 8 bricks (Instanced within the main Script?)
+
+
+
+
+
+
